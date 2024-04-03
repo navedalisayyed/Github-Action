@@ -1,0 +1,10 @@
+name: workflow-command
+
+on: [push]
+
+jobs:
+    testing-tf-command:
+        runs-on: ubuntu-latest
+        steps:
+            - name: setting an error message
+              run: echo "::error::Missing semicolon"
