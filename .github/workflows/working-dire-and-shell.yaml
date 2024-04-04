@@ -4,7 +4,7 @@ on: [push]
 
 defaults:
     run:
-      shell: bash  
+      shell: bash  # This makes bash shell available across the jobs
 
 jobs:
    display-wd-display:
@@ -19,6 +19,10 @@ jobs:
           echo $GITHUB_WORKSPACE
    display-wd-windows:
      runs-on: windows-latest
+     defaults:   
+        run:
+          shell: pwsh   #This makes pwsh shell for this job only
+
      steps:
       - name: Display working Directory and List files
         run: |
