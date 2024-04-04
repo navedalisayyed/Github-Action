@@ -17,6 +17,9 @@ jobs:
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
+      - name: change Working Dir
+        working-directory: /home/runner
+        run: pwd     
    display-wd-windows:
      runs-on: windows-latest
      defaults:   
