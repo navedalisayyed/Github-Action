@@ -1,0 +1,25 @@
+name: Working dire and shell
+
+on: [push]
+
+jobs:
+   display-wd-display:
+     runs-on: ubuntu-latest
+     steps:
+      - name: Display working Directory and List files
+        run: |
+          pwd
+          ls -la
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+   display-wd-windows:
+     runs-on: windows-latest
+     steps:
+      - name: Display working Directory and List files
+        run: |
+            pwd
+            ls -la
+            echo $GITHUB_SHA
+            echo $GITHUB_REPOSITORY
+            echo $GITHUB_WORKSPACE      
