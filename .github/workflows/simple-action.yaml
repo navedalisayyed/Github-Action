@@ -1,0 +1,13 @@
+name: Simple-Action
+
+on: [push]
+
+jobs:
+  checkout-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: list file before
+        run: ls -a
+      - uses: action/checkout@v4
+      - name: List file after
+        run : ls -a    

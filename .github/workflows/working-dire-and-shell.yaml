@@ -35,7 +35,7 @@ jobs:
             echo $env:GITHUB_REPOSITORY
             echo $env:GITHUB_WORKSPACE    
       - name: python shell
-        shell: python    # This makes python shell at step level
+        shell: python    # This makes python shell at this step level
         run: | 
           import platform
           print(platform.processor())       
