@@ -2,6 +2,10 @@ name: Working dire and shell
 
 on: [push]
 
+defaults:
+    run:
+      shell: bash  
+
 jobs:
    display-wd-display:
      runs-on: ubuntu-latest
