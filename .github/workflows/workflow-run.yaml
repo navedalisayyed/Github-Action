@@ -2,7 +2,7 @@ name: Workflow run
 
 on:
   workflow_run:
-    workflows: [ events ]
+    workflows: [ Events-types ]
     types:
         - completed
 jobs:
