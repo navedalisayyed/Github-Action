@@ -1,0 +1,39 @@
+name: mannual-trigger
+
+on:
+  workflow_dispatch:
+    inputs:
+        string:
+            description: As string input
+            type: string
+            required: true
+            default: "Default-value"
+        number:
+            description: A number input
+            type: number
+            default: 4
+        option:
+            description: "An option input"
+            type: choice
+            required: true
+            default: "option 3"
+            options:
+                - option 1
+                - option 2
+                - option 3
+        boolean: 
+            description: A boolean input
+            required: false
+            type: boolean
+jobs:
+    log-info:
+        runs-on: ubuntu-latest
+        steps:
+          -  run: echo $GITHUB_REF
+          -  run: | 
+                echo "String: ${{ inputs.string }}"
+                echo "Number: ${{ inputs.number }}"
+                echo "Option: ${{ inputs.option }}"
+                echo "Boolean: ${{ inputs.boolean }}"
+
+
