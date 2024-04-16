@@ -1,0 +1,11 @@
+name: Environment Variables
+on: [push]
+
+jobs:
+  env-vars-and-context:
+    runs-on: ubuntu-latest
+    steps:
+     - name: log ENV VAR
+       run: echo $GITHUB_REF #This Env variable lives in runner machine when our Workflow send from github action to runner machine
+     - name: Log Context
+       run: echo '${{ github.ref }}'  #This expression evaluted before sending workflow to runner machine.it going to send evaluated expression to runner manchine
