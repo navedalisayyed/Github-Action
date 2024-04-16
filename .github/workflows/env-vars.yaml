@@ -1,11 +1,26 @@
 name: Environment Variables
 on: [push]
+env:
+ WF_LEVEL_ENV: This is available to all jobs and steps
 
 jobs:
   env-vars-and-context:
+    env:
+     JOB_LEVEL_ENV: This is available to all steps for this job
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     steps:
      - name: log ENV VAR
-       run: echo $GITHUB_REF #This Env variable lives in runner machine when our Workflow send from github action to runner machine
+       run: echo $GITHUB_REF            #This Env variable lives in runner machine when our Workflow send from github action to runner machine
      - name: Log Context
-       run: echo '${{ github.ref }}'  #This expression evaluted before sending workflow to runner machine.it going to send evaluated expression to runner manchine
+       run: echo '${{ github.ref }}'    #This expression evaluted by github before sending workflow to runner machine.it going to send evaluated expression to runner manchine
+     - name: Log Custom Env Vars
+       env: 
+        STEP_LEVEL_ENV: Available to this steps only
+        WF_LEVEL_ENV: overriden in steps
+       run: | 
+        echo '${{ env.STEP_LEVEL_ENV }}'
+        echo $STEP_LEVEL_ENV
+        echo $WF_LEVEL_ENV
+        echo $JOB_LEVEL_ENV
+
