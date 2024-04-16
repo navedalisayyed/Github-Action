@@ -21,7 +21,7 @@ jobs:
      - name: Multiline String
        run: | 
         DELIMITER=1234
-        echo "RANDOM_JOKE  << $DELIMITER" >> "$GITHUB_ENV"
+        echo "RANDOM_JOKE<< $DELIMITER" >> "$GITHUB_ENV"
         echo "Here is a Joke: " >> "$GITHUB_ENV"
         curl -s https://icanhazdadjoke.com/ >> "$GITHUB_ENV"
         echo "" >> "$GITHUB_ENV"
