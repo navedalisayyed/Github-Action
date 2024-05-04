@@ -20,7 +20,7 @@ jobs:
         exclude:
           - os: ubuntu-latest #exclude the combination where os is ubuntu-latest\\
             node-version: 14  # and node version is 14
-      fail-fast: false
+      fail-fast: true
      # max-parallel: 3  
     runs-on: ${{ matrix.os}} 
     steps:
