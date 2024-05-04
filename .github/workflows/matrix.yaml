@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   node-matrix:
-    continue-on-error : ${{ matrix.experimental == true }}
+    continue-on-error : ${{ matrix.experimental == false }}
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
@@ -24,7 +24,7 @@ jobs:
      # max-parallel: 3  
     runs-on: ${{ matrix.os}} 
     steps:
-     - if: matrix.experimental == true
+     - if: matrix.experimental == false
        run: exit 1 
      - run: node -v
      - run: echo ${{ toJSON(matrix) }}
