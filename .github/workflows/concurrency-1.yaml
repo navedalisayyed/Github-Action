@@ -3,10 +3,15 @@ name: Concurrency 1
 on:
  workflow_dispatch:
     inputs:
-        environment:
-            description: "Environment"
-            type: string
-            default: staging
+      option:
+        description: "Environment"
+        type: choice
+        required: true
+        default: "Development"
+        options:
+            - QA
+            - Staging
+            - Production
 concurrency: 
   group: concurrency-1
   cancel-in-progress: true
