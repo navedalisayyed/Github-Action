@@ -5,8 +5,8 @@ on:
     inputs:
         environment:
             description: "Environment"
-            type: environment
-            required: true
+            type: string
+            default: staging
 concurrency: concurrency-1
 jobs:
   sleep:
