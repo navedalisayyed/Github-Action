@@ -13,5 +13,4 @@ jobs:
     uses: navedalisayyed/workflow/.github/workflows/reusable.yaml@main       
     with:
       name: ${{ inputs.name }}
-    secrets: 
-      access-token: ${{ secrets.ACCESS_TOKEN }}
+    
