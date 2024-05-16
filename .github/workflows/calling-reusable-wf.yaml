@@ -10,7 +10,7 @@ on:
 
 jobs:
   calling-reusable-workflow:
-    uses: navedalisayyed/workflow/.github/workflows/reusable.yaml@main       
+    uses: navedalisayyed/workflow/.github/workflows/reusable.yaml@main      
     with:
       name: ${{ inputs.name }}
     
